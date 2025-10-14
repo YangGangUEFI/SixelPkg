@@ -1,0 +1,3 @@
+[submodule "Library/SixelLib/libsixel"]
+	path = Library/SixelLib/libsixel
+	url = https://github.com/saitoha/libsixel.git
