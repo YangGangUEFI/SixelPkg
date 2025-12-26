@@ -1,0 +1,15 @@
+
+[Defines]
+  DEC_SPECIFICATION              = 0x00010005
+  PACKAGE_NAME                   = SixelPkg
+  PACKAGE_GUID                   = C7559A25-B393-4A1C-A0AA-4C42B93588FC
+  PACKAGE_VERSION                = 0.98
+
+[Includes]
+  Include
+
+[Includes.Common.Private]
+  # Library/SixelLib
+
+[LibraryClasses]
+  SixelLib|Include/Library/SixelLib.h

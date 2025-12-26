@@ -1,0 +1,84 @@
+## @file
+#  SixelLib encode API from the libsixel project
+#
+#  Copyright (c) 2025, Yang Gang. All rights reserved.<BR>
+#
+#  SPDX-License-Identifier: MIT
+#
+#
+##
+
+[Defines]
+  INF_VERSION     = 0x00010005
+  BASE_NAME       = SixelLib
+  FILE_GUID       = C34F0669-8FD3-4EAA-A33E-90EC9BC0F58D
+  MODULE_TYPE     = DXE_DRIVER
+  VERSION_STRING  = 1.0
+  LIBRARY_CLASS   = SixelLib|DXE_DRIVER UEFI_APPLICATION
+  # CONSTRUCTOR     = SixelLibConstructor
+  # DESTRUCTOR      = SixelLibDestructor
+
+[Sources]
+  SixelLib.c
+
+  Wrapper.c
+  Wrapper.h
+
+  limits.h
+  stdint.h
+  stdio.h
+  stdarg.h
+  stddef.h
+  stdlib.h
+  string.h
+  assert.h
+
+  sixel.h
+  config.h
+
+  # libsixel
+  libsixel/src/allocator.c
+#  libsixel/src/chunk.c
+#  libsixel/src/decoder.c
+  libsixel/src/dither.c
+#  libsixel/src/encoder.c
+#  libsixel/src/frame.c
+#  libsixel/src/fromgif.c
+#  libsixel/src/frompnm.c
+  libsixel/src/fromsixel.c
+#  libsixel/src/loader.c
+  libsixel/src/malloc_stub.c
+  libsixel/src/output.c
+  libsixel/src/pixelformat.c
+  libsixel/src/quant.c
+#  libsixel/src/scale.c
+  libsixel/src/status.c
+#  libsixel/src/stb_image_write.c
+  libsixel/src/tests.c
+  libsixel/src/tosixel.c
+#  libsixel/src/tty.c
+#  libsixel/src/writer.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  SixelPkg/SixelPkg.dec
+
+[LibraryClasses]
+  UefiLib
+  UefiBootServicesTableLib
+  UefiApplicationEntryPoint
+  MemoryAllocationLib
+  BaseMemoryLib
+  PrintLib
+  BaseLib
+  SortLib
+  SixelLib
+
+[Guids]
+
+[Protocols]
+  gEdkiiPlatformLogoProtocolGuid
+
+[BuildOptions]
+  MSFT:*_*_*_CC_FLAGS = /wd4244 /wd4996

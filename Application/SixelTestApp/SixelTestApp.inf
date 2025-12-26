@@ -1,0 +1,37 @@
+## @file
+#  SixelTestApp.
+#
+#  Copyright (c) 2025, Yang Gang. All rights reserved.<BR>
+#
+#  SPDX-License-Identifier: MIT
+#
+#
+##
+
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = SixelTestApp
+  FILE_GUID                      = 56ACF08C-1AD6-44FA-B767-65F07A814F72
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = UefiMain
+
+
+[Sources]
+  SixelTestApp.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  SixelPkg/SixelPkg.dec
+
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiBootServicesTableLib
+  SerialPortLib
+  UefiLib
+  MemoryAllocationLib
+  SixelLib
+
+[Protocols]
+  gEdkiiPlatformLogoProtocolGuid
